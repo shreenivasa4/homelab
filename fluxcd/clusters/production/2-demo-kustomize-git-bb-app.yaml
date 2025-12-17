@@ -10,5 +10,5 @@ spec:
   prune: true
   sourceRef:
     kind: GitRepository
-    name: 2-dmeo-source-git-bb-app
+    name: 2-demo-source-git-bb-app
   targetNamespace: 2-demo
