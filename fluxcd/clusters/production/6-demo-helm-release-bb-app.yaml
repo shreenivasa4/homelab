@@ -12,6 +12,8 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: 6-demo-source-helm-bb-app
+  install:
+    createNamespace: true
   interval: 1m0s
   storageNamespace: 6-demo
   targetNamespace: 6-demo
