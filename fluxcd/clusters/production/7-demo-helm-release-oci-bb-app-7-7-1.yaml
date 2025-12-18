@@ -2,7 +2,7 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: 7-demo-source-oci-helm-bb-app-7-7-1
+  name: 7-demo-helm-release-oci-bb-app-7-7-1
   namespace: flux-system
 spec:
   chart:
