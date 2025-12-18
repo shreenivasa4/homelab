@@ -14,8 +14,6 @@ spec:
         name: cert-manager
         namespace: flux-system
       version: 1.17.x
-  install:
-    createNamespace: true
   interval: 1m0s
   releaseName: cert-manager
   targetNamespace: cert-manager
@@ -56,7 +54,7 @@ spec:
                   fieldPath: metadata.namespace
                 path: namespace
     crds:
-      enabled: false
+      enabled: true
     global:
       priorityClassName: system-cluster-critical
     podDisruptionBudget:
@@ -66,7 +64,7 @@ spec:
     serviceAccount:
       automountServiceAccountToken: false
     startupapicheck:
-      timeout: 5m
+      timeout: 15m
       automountServiceAccountToken: false
       serviceAccount:
         automountServiceAccountToken: false
