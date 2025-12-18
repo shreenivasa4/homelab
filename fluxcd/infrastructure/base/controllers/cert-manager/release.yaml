@@ -1,0 +1,149 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: cert-manager
+  namespace: flux-system
+spec:
+  chart:
+    spec:
+      chart: cert-manager
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: cert-manager
+        namespace: flux-system
+      version: 1.17.x
+  install:
+    createNamespace: true
+  interval: 1m0s
+  releaseName: cert-manager
+  targetNamespace: cert-manager
+  values:
+    automountServiceAccountToken: false
+    cainjector:
+      automountServiceAccountToken: false
+      extraArgs:
+      - --namespace=cert-manager
+      - --enable-certificates-data-source=false
+      podDisruptionBudget:
+        enabled: true
+        minAvailable: 1
+      replicaCount: 2
+      serviceAccount:
+        automountServiceAccountToken: false
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: serviceaccount-token
+        readOnly: true
+      volumes:
+      - name: serviceaccount-token
+        projected:
+          defaultMode: 292
+          sources:
+          - serviceAccountToken:
+              expirationSeconds: 3607
+              path: token
+          - configMap:
+              items:
+              - key: ca.crt
+                path: ca.crt
+              name: kube-root-ca.crt
+          - downwardAPI:
+              items:
+              - fieldRef:
+                  apiVersion: v1
+                  fieldPath: metadata.namespace
+                path: namespace
+    crds:
+      enabled: false
+    global:
+      priorityClassName: system-cluster-critical
+    podDisruptionBudget:
+      enabled: true
+      minAvailable: 1
+    replicaCount: 2
+    serviceAccount:
+      automountServiceAccountToken: false
+    startupapicheck:
+      timeout: 5m
+      automountServiceAccountToken: false
+      serviceAccount:
+        automountServiceAccountToken: false
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: serviceaccount-token
+        readOnly: true
+      volumes:
+      - name: serviceaccount-token
+        projected:
+          defaultMode: 292
+          sources:
+          - serviceAccountToken:
+              expirationSeconds: 3607
+              path: token
+          - configMap:
+              items:
+              - key: ca.crt
+                path: ca.crt
+              name: kube-root-ca.crt
+          - downwardAPI:
+              items:
+              - fieldRef:
+                  apiVersion: v1
+                  fieldPath: metadata.namespace
+                path: namespace
+    volumeMounts:
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: serviceaccount-token
+      readOnly: true
+    volumes:
+    - name: serviceaccount-token
+      projected:
+        defaultMode: 292
+        sources:
+        - serviceAccountToken:
+            expirationSeconds: 3607
+            path: token
+        - configMap:
+            items:
+            - key: ca.crt
+              path: ca.crt
+            name: kube-root-ca.crt
+        - downwardAPI:
+            items:
+            - fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.namespace
+              path: namespace
+    webhook:
+      automountServiceAccountToken: false
+      podDisruptionBudget:
+        enabled: true
+        minAvailable: 1
+      replicaCount: 3
+      serviceAccount:
+        automountServiceAccountToken: false
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: serviceaccount-token
+        readOnly: true
+      volumes:
+      - name: serviceaccount-token
+        projected:
+          defaultMode: 292
+          sources:
+          - serviceAccountToken:
+              expirationSeconds: 3607
+              path: token
+          - configMap:
+              items:
+              - key: ca.crt
+                path: ca.crt
+              name: kube-root-ca.crt
+          - downwardAPI:
+              items:
+              - fieldRef:
+                  apiVersion: v1
+                  fieldPath: metadata.namespace
+                path: namespace
