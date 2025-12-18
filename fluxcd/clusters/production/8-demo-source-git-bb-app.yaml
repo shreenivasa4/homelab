@@ -9,3 +9,5 @@ spec:
   ref:
     branch: 8-demo
   url: https://github.com/shreenivasa4/bb-app-source
+  secretRef:
+    name: bb-app-source
