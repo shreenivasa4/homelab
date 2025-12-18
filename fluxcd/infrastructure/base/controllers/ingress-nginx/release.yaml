@@ -18,7 +18,7 @@ spec:
       namespace: cert-manager
   install:
     crds: Create
-  interval: 1h0m0s
+  interval: 1m0s
   releaseName: ingress-nginx
   targetNamespace: ingress-nginx
   upgrade:

@@ -13,5 +13,5 @@ spec:
     namespace: flux-system
   path: ./fluxcd/infrastructure/production
   prune: true
-  wait: false
+  wait: true
   timeout: 30m0s
