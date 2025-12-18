@@ -11,8 +11,8 @@ spec:
         branch: 8-demo
     commit:
       author:
-        email: fluxbot@users.noreply.github.com
-        name: fluxbot
+        email: "hariharanep@gmail.com"
+        name: "Hariharan E"
     push:
       branch: 8-demo
   interval: 1m0s
