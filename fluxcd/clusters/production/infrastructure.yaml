@@ -6,7 +6,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 1h
-  retryInterval: 1m
+  retryInterval: 2m0s
   sourceRef:
     kind: GitRepository
     name: flux-system
@@ -14,4 +14,4 @@ spec:
   path: ./fluxcd/infrastructure/production
   prune: true
   wait: true
-  timeout: 30m0s
+  timeout: 5m0s

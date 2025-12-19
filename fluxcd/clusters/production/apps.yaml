@@ -5,7 +5,8 @@ metadata:
   name: apps
   namespace: flux-system
 spec:
-  interval: 1m0s
+  interval: 1h
+  retryInterval: 2m0s
   dependsOn:
     - name: infrastructure
       namespace: flux-system
@@ -15,4 +16,4 @@ spec:
   path: ./fluxcd/apps/production
   prune: true
   wait: true
-  timeout: 30m0s
+  timeout: 5m0s
