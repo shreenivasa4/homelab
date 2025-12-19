@@ -13,9 +13,9 @@ spec:
         kind: HelmRepository
         name: ingress-nginx
       version: 4.11.x
-  dependsOn:
-    - name: cert-manager
-      namespace: cert-manager
+  # dependsOn:
+  #   - name: cert-manager
+  #     namespace: cert-manager
   install:
     crds: Create
   interval: 1m0s
