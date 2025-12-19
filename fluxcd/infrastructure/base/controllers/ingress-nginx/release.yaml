@@ -23,8 +23,8 @@ spec:
   targetNamespace: ingress-nginx
   upgrade:
     crds: CreateReplace
-  values:
-    controller:
-      admissionWebhooks:
-        certManager:
-          enabled: true
+  # values:
+  #   controller:
+  #     admissionWebhooks:
+  #       certManager:
+  #         enabled: true
