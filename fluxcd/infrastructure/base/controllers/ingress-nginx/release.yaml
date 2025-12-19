@@ -18,11 +18,17 @@ spec:
   #     namespace: cert-manager
   install:
     crds: Create
-  interval: 1m0s
-  releaseName: ingress-nginx
-  targetNamespace: ingress-nginx
+    strategy:
+      name: RetryOnFailure
+      retryInterval: 2m
   upgrade:
     crds: CreateReplace
+    strategy:
+      name: RetryOnFailure
+      retryInterval: 3m
+  interval: 12h
+  releaseName: ingress-nginx
+  targetNamespace: ingress-nginx
   # values:
   #   controller:
   #     admissionWebhooks:
