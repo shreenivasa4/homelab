@@ -24,6 +24,7 @@ spec:
     strategy:
       name: RetryOnFailure
       retryInterval: 2m
+    timeout: 10m0s
   upgrade:
     crds: CreateReplace
     remediation:
@@ -31,11 +32,15 @@ spec:
     strategy:
       name: RetryOnFailure
       retryInterval: 3m
+    timeout: 10m0s
   interval: 10m
   releaseName: ingress-nginx
   targetNamespace: ingress-nginx
+  wait: false
   values:
     controller:
       admissionWebhooks:
         certManager:
           enabled: true
+      service:
+        type: ClusterIP
