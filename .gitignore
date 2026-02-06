@@ -1,2 +1,8 @@
+# VS Code settings
 .vscode
+# Vagrant files
 vagrant/.vagrant/*
+# Snyk Security Extension - AI Rules (auto-generated)
+.github/instructions/snyk_rules.instructions.md
+# Private age key
+age.key

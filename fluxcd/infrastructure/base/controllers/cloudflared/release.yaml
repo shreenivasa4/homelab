@@ -1,0 +1,32 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: cloudflared
+  namespace: flux-system
+spec:
+  chart:
+    spec:
+      chart: cloudflare-tunnel
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: cloudflared
+        namespace: flux-system
+      version: 0.3.0
+    dependsOn:
+    - name: sealed-secrets
+      namespace: sealed-secrets
+  interval: 1m0s
+  releaseName: cloudflared
+  targetNamespace: cloudflared
+  values:
+    cloudflare:
+      tunnelName: "homelab"
+      tunnelId: "8ce1af5d-6ab4-4581-a39c-dc4da23b3066"
+      secretName: "cloudflare-tunnel-credentials"
+      ingress:
+        - hostname: "*.hariharanep4.xyz"
+          service: "https://ingress-nginx-controller.ingress-nginx.svc.cluster.local:443"
+          originRequest:
+            noTLSVerify: true
