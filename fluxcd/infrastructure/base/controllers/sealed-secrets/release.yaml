@@ -16,9 +16,21 @@ spec:
       version: 2.17.0
   install:
     crds: Create
+    remediation:
+      retries: 3
+    strategy:
+      name: RetryOnFailure
+      retryInterval: 1m
+    timeout: 5m0s
+  upgrade:
+    crds: CreateReplace
+    remediation:
+      retries: 3
+    strategy:
+      name: RetryOnFailure
+      retryInterval: 1m
+    timeout: 5m0s
   interval: 1h0m0s
   releaseName: sealed-secrets-controller
   storageNamespace: sealed-secrets
   targetNamespace: sealed-secrets
-  upgrade:
-    crds: CreateReplace

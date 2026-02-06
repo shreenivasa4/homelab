@@ -17,6 +17,11 @@ spec:
   install:
     remediation:
       retries: 3
+    timeout: 5m0s
+  upgrade:
+    remediation:
+      retries: 3
+    timeout: 5m0s
   # Default values
   # https://github.com/stefanprodan/podinfo/blob/master/charts/podinfo/values.yaml
   values:
