@@ -39,7 +39,6 @@ spec:
   values:
     controller:
       admissionWebhooks:
-        certManager:
-          enabled: true
+        enabled: false
       service:
         type: ClusterIP
