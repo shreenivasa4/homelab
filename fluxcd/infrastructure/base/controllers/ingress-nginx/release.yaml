@@ -43,6 +43,3 @@ spec:
           enabled: true
       service:
         type: ClusterIP
-    serviceAccount:
-      create: true
-      automountServiceAccountToken: false
