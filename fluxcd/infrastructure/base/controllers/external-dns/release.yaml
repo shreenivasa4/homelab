@@ -18,9 +18,11 @@ spec:
   releaseName: external-dns
   targetNamespace: external-dns
   values:
+    sources:
+      - ingress
+    policy: sync
     provider:
       name: cloudflare
-    policy: upsert-only
     env:
       - name: CF_API_TOKEN
         valueFrom:
