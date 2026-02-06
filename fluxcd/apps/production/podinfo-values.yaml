@@ -15,4 +15,6 @@ spec:
             - path: /
               pathType: ImplementationSpecific
       annotations:
+        external-dns.alpha.kubernetes.io/target: "8ce1af5d-6ab4-4581-a39c-dc4da23b3066.cfargotunnel.com"
         external-dns.alpha.kubernetes.io/hostname: podinfo.hariharanep4.xyz
+        external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
