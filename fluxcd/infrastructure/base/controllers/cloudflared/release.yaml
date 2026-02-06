@@ -14,9 +14,6 @@ spec:
         name: cloudflared
         namespace: flux-system
       version: 0.3.0
-    dependsOn:
-    - name: sealed-secrets
-      namespace: sealed-secrets
   interval: 1m0s
   releaseName: cloudflared
   targetNamespace: cloudflared
