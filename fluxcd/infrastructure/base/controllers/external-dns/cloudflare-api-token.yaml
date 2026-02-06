@@ -1,0 +1,23 @@
+apiVersion: v1
+data:
+    cloudflare-api-token: ENC[AES256_GCM,data:GpaGKGl5nwxWlNknvsXvD6lEzdPe5cOmG9Jbz0y8EDzsdmk5Xja5nSB3ewmr02dwFy5ZAcIhK8g=,iv:wgBlnK6iETVZNw4LM+XxKeSDjW3bHYE4/0XkC+YtkRs=,tag:Wa4Q9ihIM0rfwm/0NZsaVQ==,type:str]
+    email: ENC[AES256_GCM,data:Kpiusclk+uStY4yr4O//JqIqrUgWjmqfcXatNA==,iv:NAtt1qQqGcBxLLNdxCDqNBEF3s3Ym3YZdP+pzSGxHws=,tag:kvjc4axRXWbC1TABL4FZpA==,type:str]
+kind: Secret
+metadata:
+    name: cloudflare-api-token
+    namespace: external-dns
+sops:
+    age:
+        - recipient: age1z4mur5k05s5ajjh20rf8ljy5ms39wdj6frtwxyfnmuz6qea6hs7q270xey
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBnb3oyMW5GUjdCV25jYk0r
+            V1lyZ2dML2UwZHRCRDJYbkMwTC9PWFVSaVJFCjZNanN4MlpPNG1UU1dWV29EMlBQ
+            VEsxdkgwRXRUaWk1dWdjeGZ6Skk2bzQKLS0tIDRpSVFqWWs2ODZlWDhBbEhKaWRm
+            VHZoMXdzRWJ3N1dQNC9nejZUS2d6MlUK1GYyftmbtOyuvlGCgFLAZ6IXX+xSKMtR
+            /wrOp2Ss+dTsOIYSyViYq3mz0iJxmnZL3fDz+t5gIs/k0N9jRn+W3Q==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2026-02-06T16:02:26Z"
+    mac: ENC[AES256_GCM,data:uehc2LBuideeiuH9V2Ujz9cbqNjvDBRdE/0KY3GPC+jqKnT4PHMkUV/SM5iuzTTOlNLFIx7AGhttQdlOm2yr1ojb+3hNxY6VLsL9HNMY8ZLNEQSCvmB80CSQapuisPpEWV87njiLFho5Aqc1OydHuNbxTS2I1x7oDUj15lhiS78=,iv:fbwYV5Re2s5yrpYogKQ5WY9Y8uEFqhvAdDGOrptjHig=,tag:fIePzDw6c1rMZmBgzfUb+A==,type:str]
+    encrypted_regex: ^(data|stringData)$
+    version: 3.11.0
