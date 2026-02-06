@@ -4,3 +4,4 @@ resources:
   - cert-manager
   - ingress-nginx
   - sealed-secrets
+  - cloudflared
