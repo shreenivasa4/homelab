@@ -36,9 +36,9 @@ spec:
   interval: 10m
   releaseName: ingress-nginx
   targetNamespace: ingress-nginx
-  values:
-    controller:
-      admissionWebhooks:
-        enabled: false
-      service:
-        type: ClusterIP
+  # values:
+  #   controller:
+  #     admissionWebhooks:
+  #       enabled: false
+  #     service:
+  #       type: ClusterIP
