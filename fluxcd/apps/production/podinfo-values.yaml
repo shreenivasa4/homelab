@@ -14,3 +14,5 @@ spec:
           paths:
             - path: /
               pathType: ImplementationSpecific
+      annotations:
+        external-dns.alpha.kubernetes.io/hostname: podinfo.hariharanep4.xyz
