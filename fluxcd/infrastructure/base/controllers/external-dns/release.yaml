@@ -11,7 +11,8 @@ spec:
       reconcileStrategy: ChartVersion
       sourceRef:
         kind: HelmRepository
-        name: flux-system
+        name: external-dns
+        namespace: flux-system
       version: 1.17.0
   interval: 1m0s
   releaseName: external-dns
