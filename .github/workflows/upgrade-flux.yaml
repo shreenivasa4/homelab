@@ -1,0 +1,33 @@
+name: upgrade-flux
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 * * * *"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  components:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Setup Flux CLI
+        uses: fluxcd/flux2/action@main
+      - name: Check for updates
+        id: upgrade
+        run: |
+          flux install --export > ./fluxcd/clusters/production/flux-system/gotk-components.yaml
+          VERSION="$(flux -v)"
+          echo "flux_version=$VERSION" >> $GITHUB_OUTPUT
+      - name: Create Pull request
+        uses: peter-evans/create-pull-request@v7
+        with:
+            branch: upgrade-flux
+            commit-message: Upgrade Flux to ${{ steps.upgrade.outputs.flux_version }}
+            title: Upgrade Flux to ${{ steps.upgrade.outputs.flux_version }}
+            body: |
+              ${{ steps.upgrade.outputs.flux_version }}
