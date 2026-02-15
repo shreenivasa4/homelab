@@ -13,7 +13,7 @@ jobs:
   components:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Checkout Code
         uses: actions/checkout@v4
       - name: Setup Flux CLI
         uses: fluxcd/flux2/action@main
@@ -23,7 +23,7 @@ jobs:
           flux install --export > ./fluxcd/clusters/production/flux-system/gotk-components.yaml
           VERSION="$(flux -v)"
           echo "flux_version=$VERSION" >> $GITHUB_OUTPUT
-      - name: Create Pull request
+      - name: Create Pull Request
         uses: peter-evans/create-pull-request@v7
         with:
             branch: upgrade-flux
