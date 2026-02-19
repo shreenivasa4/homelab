@@ -20,7 +20,7 @@ spec:
   values:
     cloudflare:
       tunnelName: "homelab"
-      tunnelId: "8ce1af5d-6ab4-4581-a39c-dc4da23b3066"
+      tunnelId: "7c082837-45a0-4806-9bf8-6c7475a58e92"
       secretName: "cloudflare-tunnel-credentials"
       ingress:
         - hostname: "*.hariharanep4.xyz"
