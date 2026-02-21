@@ -1,0 +1,42 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: argocd
+  namespace: flux-system
+spec:
+  chart:
+    spec:
+      chart: argo-cd
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: flux-system
+      version: 9.4.3
+  interval: 1h0m0s
+  storageNamespace: flux-system
+  targetNamespace: argocd
+  values:
+    applicationSet:
+      replicas: 2
+    controller:
+      replicas: 1
+    global:
+      domain: argocd.hariharanep4.xyz
+    redis-ha:
+      enabled: true
+    repoServer:
+      autoscaling:
+        enabled: true
+        minReplicas: 2
+    server:
+      ingress:
+        annotations:
+          external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
+          external-dns.alpha.kubernetes.io/hostname: argocd.hariharanep4.xyz
+          external-dns.alpha.kubernetes.io/target: 7c082837-45a0-4806-9bf8-6c7475a58e92.cfargotunnel.com
+          nginx.ingress.kubernetes.io/backend-protocol: HTTP
+          nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+        enabled: true
+        hosts:
+        - argocd.hariharanep4.xyz
