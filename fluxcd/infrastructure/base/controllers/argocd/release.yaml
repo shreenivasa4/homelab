@@ -38,6 +38,7 @@ spec:
           external-dns.alpha.kubernetes.io/target: 242b49e3-7a13-4df0-8d63-0d7e2def744b.cfargotunnel.com
           nginx.ingress.kubernetes.io/backend-protocol: HTTP
           nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+        ingressClassName: "nginx"
         enabled: true
         hosts:
         - argocd.hariharanep4.xyz
