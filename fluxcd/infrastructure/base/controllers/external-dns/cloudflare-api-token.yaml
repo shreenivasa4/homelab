@@ -1,23 +1,23 @@
 apiVersion: v1
 data:
-    apiKey: ENC[AES256_GCM,data:+Sa7WunRq+vD0RP1raU5rBBDKtfSFLdCJOORRj3WJ//KakvAZRsqj5N0qaixbabr5+BlBEclO38=,iv:EwerTPZwNDFgrPy+4TfdRZsnUcysXvXGU+vbpaZldc8=,tag:x9dK0S8uNdNRjCcg8skyVQ==,type:str]
-    email: ENC[AES256_GCM,data:+KQnLNND8jOLtrGDkgeLhrbsYgFZbxF+SrSfrA==,iv:uDwemXHrP/VaTue801R+nXXTTnwPK5mZekBzRkFNCcs=,tag:HJ4PTUQ5Mi9BA93GBxQ0VA==,type:str]
+    cloudflare-api-token: ENC[AES256_GCM,data:NB2EvmTf90E6+l+sKGhsB+i9e3wf3WscTaaJnzFHM1cjz081nqUQiZi3CqCuZTDkhO9x8dv/wMo=,iv:A7dk/ca27Jt4KImQtJPCrwnBMNwPYBNJ71nYaiKf5RI=,tag:viMZHWWjBaT85dYJPTjbWg==,type:str]
+    email: ENC[AES256_GCM,data:x/VSRB3D93ITP1CPWuIM/ff0nMy2+UtQUPyR2w==,iv:PwSLp3gXoXWLUl8/KMURe+97cNMaUcz19Eer9h3dzc8=,tag:rCb93ATSednWPPZJ38a59A==,type:str]
 kind: Secret
 metadata:
     name: cloudflare-api-token
     namespace: external-dns
 sops:
     age:
-        - recipient: age109xdd5ywsu28982323hmkzdmnrecrargr2dzqrjk843m4uu4yp5q9kasxe
+        - recipient: age1helqcqsh9464r8chnwc2fzj8uv7vr5ntnsft0tn45v2xtz0hpfwq98cmsg
           enc: |
             -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBJcjM1MTNtaGlYWXluWk5v
-            eERIZURsV24yOUM0VmQwVkRsbHVyVnZIdUE0CldaaW9uMFFjdUh3OG1raWxoTmNX
-            dEFwUldPdXBrb1FpRjljc0tCamZJVGcKLS0tIGxUR1RNcll0VFNCOXlOY2xqTjNq
-            bG05bytuZVBZaUduWnAyM056NVhJVnMKjXTBN+2+p4uzFK8KWkGwZmr4Syq+zs45
-            IdOMRVXYdKS402VF5v+Lg4XnYfceKPywJPOXuMVxLmgzcwHwnSM7DQ==
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSB1NVZXMWZWdXZsSzJEajJo
+            K3phSXVibGxyUWVVL21QbFRwdHlYYWRWdFhVCkpWb3hsdm9GWndXZ1cwT3lyL1Qz
+            Unpid3pOd0xLUEZ1Z0R5K1hxdWFnckEKLS0tIDY3eklTMzVIN0p2Vnd2clArOENh
+            RDN1WlZ6MCt2VTdPTzZma21vcERIMUUKC7HEIPa1J5o5Y7vq76Hsx7zfgWpobl1M
+            WehyUZRlC7j1zyfO4O/oSxJj4cBHeUsM5PaYBTYJHgnEwraas7f4WQ==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2026-02-19T07:47:10Z"
-    mac: ENC[AES256_GCM,data:/bF2155AmZSJhOEdMPlPwdaAL/OSV9H2TBTM+EezwJybvjQNwKjyRd9SECuGLCLS1GhEaXhnAwy94taww2tAbTodxaNdv70zeft5Q7mgIaydBe3d+JRYjGM82lAJmMOznyoFiilC5bnp/eJaf2R6AH2LoWhLbmET/RvHQSI2G3M=,iv:Ar3u+yknATdD/CACZeh7uCHoNT1+Dq0zXrquQMF0syU=,tag:xPwUfcrKUx26cSx/6Fje8g==,type:str]
+    lastmodified: "2026-02-25T16:22:25Z"
+    mac: ENC[AES256_GCM,data:epwrVG0c/iffy79KrbFS1B969aJW4gUFA/6QTzRJtX8tJnTwDlLy6RUrBCmjJ2PtJu5uG+6sqivLjrNDLgFA5re7TOhtvHb6Qp/lYwi0Q0ynUq5sh51Us+3cpo7BqAGUADJV4hglwm2pRGLwRgskRKGgOMLfEsididiLIPbvvWs=,iv:dn5wvklaPRLHun3Ph97saJXNrAhdAm/zK+YTFGmGyWE=,tag:mBu3ueYkdmLZsNwNR6emHg==,type:str]
     encrypted_regex: ^(data|stringData)$
-    version: 3.11.0
+    version: 3.12.1
