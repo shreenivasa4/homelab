@@ -14,6 +14,20 @@ spec:
         name: argocd
         namespace: flux-system
       version: 9.4.3
+  install:
+    remediation:
+      retries: 3
+    strategy:
+      name: RetryOnFailure
+      retryInterval: 1m
+    timeout: 10m0s
+  upgrade:
+    remediation:
+      retries: 3
+    strategy:
+      name: RetryOnFailure
+      retryInterval: 1m
+    timeout: 10m0s
   interval: 1h0m0s
   storageNamespace: flux-system
   targetNamespace: argocd
