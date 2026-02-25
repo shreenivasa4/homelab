@@ -8,5 +8,5 @@ resources:
   - external-dns
   - kyverno
   - kyverno-policies
-  - metrics-server
+  # - metrics-server
   - argocd
