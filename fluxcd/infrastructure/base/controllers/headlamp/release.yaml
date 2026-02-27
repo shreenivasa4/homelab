@@ -24,7 +24,7 @@ spec:
   releaseName: headlamp
   targetNamespace: kube-system
   values:
-    hostUsers: false
+    # hostUsers: false
     # securityContext:
     #   capabilities:
     #     drop:
