@@ -1,0 +1,27 @@
+hostUsers: true
+
+securityContext:
+  capabilities:
+    drop:
+    - ALL
+  readOnlyRootFilesystem: true
+  runAsNonRoot: true
+  privileged: false
+  runAsUser: 100
+  runAsGroup: 101
+  allowPrivilegeEscalation: false
+  seccompProfile:
+    type: RuntimeDefault
+
+ingress:
+  enabled: true
+  annotations:
+    external-dns.alpha.kubernetes.io/target: "242b49e3-7a13-4df0-8d63-0d7e2def744b.cfargotunnel.com"
+    external-dns.alpha.kubernetes.io/hostname: headlamp.hariharanep4.xyz
+    external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
+  ingressClassName: "nginx"
+  hosts:
+  - host: headlamp.hariharanep4.xyz
+    paths:
+    - path: /
+      type: ImplementationSpecific
