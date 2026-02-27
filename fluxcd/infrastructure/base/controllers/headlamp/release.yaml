@@ -24,6 +24,8 @@ spec:
   releaseName: headlamp
   targetNamespace: kube-system
   values:
+    config:
+      inClusterContextName: "homelab-production"
     # hostUsers: false
     # securityContext:
     #   capabilities:
