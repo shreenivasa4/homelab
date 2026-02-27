@@ -7,3 +7,6 @@ vagrant/.vagrant/*
 
 # Credential files
 credentials
+
+# Archive
+archive
