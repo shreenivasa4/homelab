@@ -24,19 +24,19 @@ spec:
   releaseName: headlamp
   targetNamespace: kube-system
   values:
-    hostUsers: true
-    securityContext:
-      capabilities:
-        drop:
-        - ALL
-      readOnlyRootFilesystem: true
-      runAsNonRoot: true
-      privileged: false
-      runAsUser: 100
-      runAsGroup: 101
-      allowPrivilegeEscalation: false
-      seccompProfile:
-        type: RuntimeDefault
+    hostUsers: false
+    # securityContext:
+    #   capabilities:
+    #     drop:
+    #     - ALL
+    #   readOnlyRootFilesystem: true
+    #   runAsNonRoot: true
+    #   privileged: false
+    #   runAsUser: 100
+    #   runAsGroup: 101
+    #   allowPrivilegeEscalation: false
+    #   seccompProfile:
+    #     type: RuntimeDefault
     ingress:
       enabled: true
       annotations:
