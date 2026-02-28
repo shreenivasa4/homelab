@@ -3,12 +3,12 @@ kind: Kustomization
 resources:
   - cert-manager
   - ingress-nginx
-  - sealed-secrets
   - cloudflared
   - external-dns
-  - headlamp
-  - flagger
+  - argocd
+  # - sealed-secrets
+  # - headlamp
+  # - flagger
   # - kyverno
   # - kyverno-policies
   # - metrics-server
-  - argocd
