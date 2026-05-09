@@ -20,10 +20,10 @@ spec:
   values:
     cloudflare:
       tunnelName: "homelab"
-      tunnelId: "242b49e3-7a13-4df0-8d63-0d7e2def744b"
+      tunnelId: "26016222-ecef-4643-b9b5-0a28c04de49c"
       secretName: "cloudflare-tunnel-credentials"
       ingress:
-        - hostname: "*.hariharanep4.xyz"
+        - hostname: "*.hariharanep4.space"
           service: "https://ingress-nginx-controller.ingress-nginx.svc.cluster.local:443"
           originRequest:
             noTLSVerify: true

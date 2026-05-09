@@ -37,7 +37,7 @@ spec:
     controller:
       replicas: 1
     global:
-      domain: argocd.hariharanep4.xyz
+      domain: argocd.hariharanep4.space
     redis-ha:
       enabled: true
     repoServer:
@@ -52,11 +52,11 @@ spec:
         enabled: true
         annotations:
           external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
-          external-dns.alpha.kubernetes.io/hostname: argocd.hariharanep4.xyz
-          external-dns.alpha.kubernetes.io/target: 242b49e3-7a13-4df0-8d63-0d7e2def744b.cfargotunnel.com
+          external-dns.alpha.kubernetes.io/hostname: argocd.hariharanep4.space
+          external-dns.alpha.kubernetes.io/target: 26016222-ecef-4643-b9b5-0a28c04de49c.cfargotunnel.com
           nginx.ingress.kubernetes.io/backend-protocol: HTTP
           nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
         ingressClassName: "nginx"
         hosts:
-        - argocd.hariharanep4.xyz
+        - argocd.hariharanep4.space
       

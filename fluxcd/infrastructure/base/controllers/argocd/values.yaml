@@ -14,16 +14,16 @@ applicationSet:
   replicas: 2
 
 global:
-  domain: argocd.hariharanep4.xyz
+  domain: argocd.hariharanep4.space
 
 server:
   ingress:
     enabled: true
     hosts:
-      - argocd.hariharanep4.xyz
+      - argocd.hariharanep4.space
     annotations:
       nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
       nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
-      external-dns.alpha.kubernetes.io/target: "242b49e3-7a13-4df0-8d63-0d7e2def744b.cfargotunnel.com"
-      external-dns.alpha.kubernetes.io/hostname: argocd.hariharanep4.xyz
+      external-dns.alpha.kubernetes.io/target: "26016222-ecef-4643-b9b5-0a28c04de49c.cfargotunnel.com"
+      external-dns.alpha.kubernetes.io/hostname: argocd.hariharanep4.space
       external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"

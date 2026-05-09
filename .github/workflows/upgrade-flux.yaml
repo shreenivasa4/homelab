@@ -26,8 +26,8 @@ jobs:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v7
         with:
-            branch: upgrade-flux
-            commit-message: Upgrade to ${{ steps.upgrade.outputs.flux_version }}
-            title: Upgrade to ${{ steps.upgrade.outputs.flux_version }}
-            body: |
-              ${{ steps.upgrade.outputs.flux_version }}
+          branch: upgrade-flux
+          commit-message: Upgrade to ${{ steps.upgrade.outputs.flux_version }}
+          title: Upgrade to ${{ steps.upgrade.outputs.flux_version }}
+          body: |
+            ${{ steps.upgrade.outputs.flux_version }}

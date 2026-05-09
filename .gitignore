@@ -5,8 +5,8 @@ vagrant/.vagrant/*
 # Snyk Security Extension - AI Rules (auto-generated)
 .github/instructions/snyk_rules.instructions.md
 
-# Credential files
-credentials
+# Directory that contains sensitive information.
+secrets
 
 # Archive
 archive
