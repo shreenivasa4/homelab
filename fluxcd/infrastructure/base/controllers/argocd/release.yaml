@@ -32,6 +32,7 @@ spec:
   storageNamespace: flux-system
   targetNamespace: argocd
   values:
+    fullnameOverride: argocd
     applicationSet:
       replicas: 2
     controller:
