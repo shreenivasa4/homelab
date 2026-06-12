@@ -5,7 +5,9 @@ resources:
   - ingress-nginx
   - cloudflared
   - external-dns
+  - longhorn
   - argocd
+  # - harbor
   # - sealed-secrets
   # - headlamp
   # - flagger
