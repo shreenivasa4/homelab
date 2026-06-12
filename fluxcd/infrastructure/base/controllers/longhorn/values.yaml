@@ -1,0 +1,10 @@
+ingress:
+  enabled: true
+  ingressClassName: "nginx"
+  host: "longhorn-ui.hariharanep4.space"
+  annotations:
+    external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
+    external-dns.alpha.kubernetes.io/hostname: "longhorn-ui.hariharanep4.space"
+    external-dns.alpha.kubernetes.io/target: "26016222-ecef-4643-b9b5-0a28c04de49c.cfargotunnel.com"
+    nginx.ingress.kubernetes.io/backend-protocol: HTTP
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
