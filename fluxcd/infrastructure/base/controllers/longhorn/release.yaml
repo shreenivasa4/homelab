@@ -14,6 +14,5 @@ spec:
         name: longhorn
       version: v1.12.0
   interval: 1m0s
-  install:
-    targetNamespace: longhorn-system
+  targetNamespace: longhorn-system
 
