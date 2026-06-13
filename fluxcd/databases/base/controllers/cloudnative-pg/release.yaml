@@ -15,10 +15,6 @@ spec:
         namespace: flux-system
       interval: 1h
   targetNamespace: cnpg-system
-  install:
-    recreate: true
-  upgrade:
-    recreate: true
   values:
     updateStrategy:
       type: RollingUpdate
