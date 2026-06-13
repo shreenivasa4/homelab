@@ -51,10 +51,11 @@ spec:
         - grafana.hariharanep4.space
         path: /
     prometheus:
-      serviceMonitorSelectorNilUsesHelmValues: false
-      podMonitorSelectorNilUsesHelmValues: false
-      ruleSelectorNilUsesHelmValues: false
-      probeSelectorNilUsesHelmValues: false
+      prometheusSpec:
+        serviceMonitorSelectorNilUsesHelmValues: false
+        podMonitorSelectorNilUsesHelmValues: false
+        ruleSelectorNilUsesHelmValues: false
+        probeSelectorNilUsesHelmValues: false
       ingress:
         enabled: true
         annotations:
