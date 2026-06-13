@@ -1,0 +1,9 @@
+updateStrategy:
+  type: RollingUpdate
+  rollingUpdate:
+    maxSurge: 100%
+    maxUnavailable: 0%
+monitoring:
+  podMonitorEnabled: true
+  grafanaDashboard:
+    create: true
