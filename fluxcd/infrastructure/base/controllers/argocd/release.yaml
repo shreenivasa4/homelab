@@ -18,18 +18,12 @@ spec:
   install:
     remediation:
       retries: 3
-    strategy:
-      name: RetryOnFailure
-      retryInterval: 1m
-    timeout: 10m0s
+    timeout: 10m
   upgrade:
     remediation:
       retries: 3
-    strategy:
-      name: RetryOnFailure
-      retryInterval: 1m
-    timeout: 10m0s
-  interval: 1h0m0s
+    timeout: 10m
+  interval: 1h
   storageNamespace: flux-system
   targetNamespace: argocd
   values:

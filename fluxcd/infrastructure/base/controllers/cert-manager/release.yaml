@@ -17,18 +17,12 @@ spec:
   install:
     remediation:
       retries: 3
-    strategy:
-      name: RetryOnFailure
-      retryInterval: 1m
     timeout: 5m0s
   upgrade:
     remediation:
       retries: 3
-    strategy:
-      name: RetryOnFailure
-      retryInterval: 1m
     timeout: 5m0s
-  interval: 1m0s
+  interval: 30m
   releaseName: cert-manager
   targetNamespace: cert-manager
   values:

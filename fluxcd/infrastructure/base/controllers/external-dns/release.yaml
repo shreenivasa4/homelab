@@ -14,7 +14,13 @@ spec:
         name: external-dns
         namespace: flux-system
       version: 1.17.0
-  interval: 1m0s
+  install:
+    remediation:
+      retries: 3
+  upgrade:
+    remediation:
+      retries: 3
+  interval: 30m
   releaseName: external-dns
   targetNamespace: external-dns
   values:

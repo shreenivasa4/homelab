@@ -16,6 +16,6 @@ spec:
       version: 3.4.0
   dependsOn:
   - name: kyverno
-  interval: 10m0s
+  interval: 30m
   releaseName: kyverno-policies
   targetNamespace: kyverno

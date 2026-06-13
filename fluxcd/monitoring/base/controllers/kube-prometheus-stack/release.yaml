@@ -15,10 +15,15 @@ spec:
         namespace: flux-system
       interval: 1h
   targetNamespace: monitoring
+  releaseName: kube-prometheus-stack
   install:
     crds: Create
+    remediation:
+      retries: 3
   upgrade:
     crds: CreateReplace
+    remediation:
+      retries: 3
   values:
     alertmanager:
       ingress:
@@ -56,6 +61,10 @@ spec:
         podMonitorSelectorNilUsesHelmValues: false
         ruleSelectorNilUsesHelmValues: false
         probeSelectorNilUsesHelmValues: false
+        serviceMonitorNamespaceSelector: {}
+        podMonitorNamespaceSelector: {}
+        ruleNamespaceSelector: {}
+        probeNamespaceSelector: {}
       ingress:
         enabled: true
         annotations:

@@ -14,7 +14,13 @@ spec:
         name: cloudflared
         namespace: flux-system
       version: 0.3.0
-  interval: 1m0s
+  install:
+    remediation:
+      retries: 3
+  upgrade:
+    remediation:
+      retries: 3
+  interval: 30m
   releaseName: cloudflared
   targetNamespace: cloudflared
   values:

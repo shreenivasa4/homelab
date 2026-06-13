@@ -10,6 +10,8 @@ spec:
   dependsOn:
     - name: infrastructure
       namespace: flux-system
+    - name: monitoring
+      namespace: flux-system
   sourceRef:
     kind: GitRepository
     name: flux-system

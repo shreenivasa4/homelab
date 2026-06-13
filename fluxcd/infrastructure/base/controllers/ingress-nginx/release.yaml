@@ -21,19 +21,13 @@ spec:
     crds: Create
     remediation:
       retries: 3
-    strategy:
-      name: RetryOnFailure
-      retryInterval: 1m
     timeout: 5m0s
   upgrade:
     crds: CreateReplace
     remediation:
       retries: 3
-    strategy:
-      name: RetryOnFailure
-      retryInterval: 1m
     timeout: 5m0s
-  interval: 10m
+  interval: 30m
   releaseName: ingress-nginx
   targetNamespace: ingress-nginx
   values:
