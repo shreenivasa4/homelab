@@ -2,15 +2,16 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
   - cert-manager
+  - sealed-secrets
+  - metrics-server
   - ingress-nginx
   - cloudflared
   - external-dns
   - longhorn
+  - kyverno
+  - kyverno-policies
+  - flagger
   - argocd
-  # - harbor
-  # - sealed-secrets
-  # - headlamp
-  # - flagger
-  # - kyverno
-  # - kyverno-policies
-  # - metrics-server
+  - harbor
+  - jenkins
+  - headlamp
