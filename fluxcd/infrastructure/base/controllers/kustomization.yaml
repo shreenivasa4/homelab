@@ -11,7 +11,4 @@ resources:
   - kyverno
   - kyverno-policies
   - flagger
-  - argocd
-  - harbor
-  - jenkins
   - headlamp

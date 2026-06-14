@@ -1,20 +1,20 @@
----
-apiVersion: helm.toolkit.fluxcd.io/v2
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
 kind: HelmRelease
 metadata:
-  name: argocd
+  name: jenkins
   namespace: flux-system
 spec:
-  releaseName: argocd
+  interval: 1h0m0s
   chart:
+    releaseName: jenkins
     spec:
-      chart: argo-cd
-      reconcileStrategy: ChartVersion
+      chart: jenkins
+      version: 5.9.25
       sourceRef:
         kind: HelmRepository
-        name: argocd
+        name: jenkins
         namespace: flux-system
-      version: 9.4.3
+      reconcileStrategy: ChartVersion
   install:
     remediation:
       retries: 3
@@ -23,35 +23,29 @@ spec:
     remediation:
       retries: 3
     timeout: 10m
-  interval: 1h
   storageNamespace: flux-system
-  targetNamespace: argocd
+  targetNamespace: jenkins
   values:
-    applicationSet:
-      replicas: 2
     controller:
-      replicas: 1
-    global:
-      domain: argocd.hariharanep4.space
-    redis-ha:
-      enabled: true
-    repoServer:
-      autoscaling:
-        enabled: true
-        minReplicas: 2
-    configs:
-      params:
-        server.insecure: true
-    server:
+      resources:
+        requests:
+          cpu: "2000m"
+          memory: "4096Mi"
+        limits:
+          cpu: "2000m"
+          memory: "4096Mi"
+      fsGroupChangePolicy: Always
       ingress:
         enabled: true
+        pathType: ImplementationSpecific
         annotations:
           external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
-          external-dns.alpha.kubernetes.io/hostname: argocd.hariharanep4.space
+          external-dns.alpha.kubernetes.io/hostname: jenkins.hariharanep4.space
           external-dns.alpha.kubernetes.io/target: 26016222-ecef-4643-b9b5-0a28c04de49c.cfargotunnel.com
           nginx.ingress.kubernetes.io/backend-protocol: HTTP
           nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
-        ingressClassName: "nginx"
-        hosts:
-        - argocd.hariharanep4.space
-      
+        ingressClassName: nginx
+        path: /
+        hostName: jenkins.hariharanep4.space
+    persistence:
+      size: "20Gi"
