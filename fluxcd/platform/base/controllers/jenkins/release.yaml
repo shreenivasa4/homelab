@@ -27,13 +27,13 @@ spec:
   targetNamespace: jenkins
   values:
     controller:
-      resources:
-        requests:
-          cpu: "1000m"
-          memory: "1Gi"
-        limits:
-          cpu: "1000m"
-          memory: "1Gi"
+      # resources:
+      #   requests:
+      #     cpu: "1000m"
+      #     memory: "1Gi"
+      #   limits:
+      #     cpu: "1000m"
+      #     memory: "1Gi"
       fsGroupChangePolicy: Always
       ingress:
         enabled: true
