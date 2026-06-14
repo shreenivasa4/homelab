@@ -3,7 +3,7 @@ kind: Kustomization
 resources:
   - cert-manager
   - sealed-secrets
-  - metrics-server
+  # - metrics-server
   - ingress-nginx
   - cloudflared
   - external-dns
