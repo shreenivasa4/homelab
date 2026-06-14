@@ -5,8 +5,8 @@ metadata:
   namespace: flux-system
 spec:
   interval: 1h0m0s
+  releaseName: jenkins
   chart:
-    releaseName: jenkins
     spec:
       chart: jenkins
       version: 5.9.25
