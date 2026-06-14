@@ -29,8 +29,8 @@ spec:
     controller:
       resources:
         requests:
-          cpu: "2000m"
-          memory: "4096Mi"
+          cpu: "500m"
+          memory: "512Mi"
         limits:
           cpu: "2000m"
           memory: "4096Mi"
@@ -48,4 +48,6 @@ spec:
         path: /
         hostName: jenkins.hariharanep4.space
     persistence:
+      enabled: true
+      storageClass: longhorn
       size: "20Gi"
