@@ -8,7 +8,7 @@ metadata:
 spec:
   interval: 1m0s
   ref:
-    branch: main
+    branch: jenkins-infrastructure
   secretRef:
     name: flux-system
   url: https://github.com/shreenivasa4/homelab.git
