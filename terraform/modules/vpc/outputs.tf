@@ -1,0 +1,1 @@
+# TODO: Add outputs for all the required resources.
